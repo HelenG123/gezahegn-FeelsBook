@@ -2,4 +2,8 @@
     <string name="app_name">gezahegn-FeelsBook</string>
     <string name="main">FeelsBook</string>
     <string name="main_under">How are you feeling?</string>
+    <string name="main_desc">your personal mood tracker</string>
+    <string name="history">History</string>
+    <string name="count">Count</string>
+    <string name="comment">Add a comment (optional)</string>
 </resources>
