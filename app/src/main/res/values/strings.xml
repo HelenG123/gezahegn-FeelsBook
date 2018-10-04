@@ -1,9 +1,21 @@
 <resources>
+    <!--On the MainActivity page-->
     <string name="app_name">gezahegn-FeelsBook</string>
     <string name="main">FeelsBook</string>
     <string name="main_under">How are you feeling?</string>
     <string name="main_desc">your personal mood tracker</string>
     <string name="history">History</string>
-    <string name="count">Count</string>
+
+    <!--On the MainActivity and HistoryList page-->
     <string name="comment">Add a comment (optional)</string>
+
+    <!--On the MainActivity and Count page-->
+    <string name="count">Count</string>
+
+    <!--On the HistoryList page-->
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="list_item">Item Number</string>
+    <string name="edit_save">Save Edit</string>
+    <string name="delete_save">Save Delete</string>
 </resources>

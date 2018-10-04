@@ -23,4 +23,8 @@ public class HistoryList {
         historyList.remove(emotion);
     }
 
+    public Emotions editEmotion(Emotions emotion) {
+        return emotion;
+    }
+
 }

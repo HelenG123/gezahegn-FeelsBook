@@ -1,14 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/deleteSubmitButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editDropDown"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="27dp"
+        android:text="@string/delete_save"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/deleteItemNum"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/deleteTitle"
+        android:layout_alignTop="@+id/editItemNum2"
+        android:ems="10"
+        android:hint="@string/list_item"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:textAlignment="center"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/editTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="63dp"
+        android:text="@string/edit"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/didact_gothic1" />
 
     <ListView
         android:id="@+id/_historyListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="254dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="241dp"
+        android:layout_marginBottom="313dp"
         android:scrollbars="vertical" />
+
+    <TextView
+        android:id="@+id/deleteTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="49dp"
+        android:text="@string/delete"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/didact_gothic1" />
+
+    <EditText
+        android:id="@+id/editItemNum2"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="212dp"
+        android:layout_marginStart="39dp"
+        android:ems="10"
+        android:hint="@string/list_item"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:textAlignment="center"
+        android:textSize="14sp" />
+
+    <Spinner
+        android:id="@+id/editDropDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/editItemNum2"
+        android:layout_marginBottom="166dp"
+        android:entries="@android:array/postalAddressTypes" />
+
+    <EditText
+        android:id="@+id/editComment"
+        android:layout_width="184dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="107dp"
+        android:layout_marginStart="11dp"
+        android:ems="10"
+        android:hint="@string/comment"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:textAlignment="center"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/editSubmitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editDropDown"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="44dp"
+        android:text="@string/edit_save"
+        android:textSize="18sp" />
+
+
 </RelativeLayout>
