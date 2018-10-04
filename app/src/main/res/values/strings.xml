@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">gezahegn-FeelsBook</string>
-    <string name="main_activity_text">How Are You?</string>
+    <string name="main">FeelsBook</string>
+    <string name="main_under">How are you feeling?</string>
 </resources>
