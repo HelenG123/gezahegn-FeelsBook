@@ -28,16 +28,17 @@ import android.widget.ImageButton;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import static com.gezahegn.gezahegn_feelsbook.HistoryList.historyList;
 
 public class MainActivity extends AppCompatActivity {
 
-    public HistoryList testList;
+//    public HistoryList testList;
+    public ArrayList<Emotions> historyList;
 
     // The comment and date attribute for each instance of the Emotion class
     public EditText mainComment;
@@ -53,15 +54,14 @@ public class MainActivity extends AppCompatActivity {
     public ImageButton sadButton;
     public ImageButton surpriseButton;
     public ImageButton fearButton;
+
     public static Map<String, Integer> emotionCounter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-//        DateFormat dateFormat = new SimpleDateFormat("\"yyyy-MM-dd'T'HH:mm:ss'Z'\", Locale.US");
-
 
         // Initialize the counter. It's a dictionary/HashMap that will keep track of all the emotions
         emotionCounter = new HashMap<String, Integer>() {{
@@ -86,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Initialize the mainComment
         mainComment = (EditText) findViewById(R.id.mainComment);
+
+        final HistoryList testList = new HistoryList();
 
         // Resource: https://stackoverflow.com/questions/16473315/multiple-imagebuttons-for-one-purpose-in-a-fragment
         View.OnClickListener emojiPressedListener = new View.OnClickListener() {
@@ -116,8 +118,9 @@ public class MainActivity extends AppCompatActivity {
                 Emotions currEmotion = new Emotions(emotionType, currComment, currTime);
                 // for testing: Log.d("TESTING OBJECT", "Instance: " + currEmotion.comment);
 
-//                testList.addEmotion(currEmotion);
-//                addEmotion(currEmotion);
+                testList.addEmotion(currEmotion);
+                // for testing:
+                Log.d("TESTING OBJECT", "Instance: " + testList.getHistory());
                 }
 
             };

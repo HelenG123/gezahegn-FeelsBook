@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class HistoryList {
-    protected static ArrayList<Emotions> historyList;
+    protected ArrayList<Emotions> historyList = null;
 
 //    Constructor
     public HistoryList() {

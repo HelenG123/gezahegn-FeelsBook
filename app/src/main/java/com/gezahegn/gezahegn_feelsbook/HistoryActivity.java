@@ -10,7 +10,7 @@ import com.gezahegn.gezahegn_feelsbook.HistoryList;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static com.gezahegn.gezahegn_feelsbook.HistoryList.historyList;
+//import static com.gezahegn.gezahegn_feelsbook.HistoryList.historyList;
 
 public class HistoryActivity extends AppCompatActivity {
 
@@ -39,13 +39,13 @@ public class HistoryActivity extends AppCompatActivity {
         // This is the array adapter, it takes the context of the activity as a
         // first parameter, the type of list view as a second parameter and your
         // array as a third parameter.
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-                this,
-                android.R.layout.simple_list_item_1,
-                testArray
-        );
-
-        historyListView.setAdapter(arrayAdapter);
+//        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+//                this,
+//                android.R.layout.simple_list_item_1,
+//                testArray
+//        );
+//
+//        historyListView.setAdapter(arrayAdapter);
 
 
     }
