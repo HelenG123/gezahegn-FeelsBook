@@ -31,6 +31,8 @@ public class CountActivity extends AppCompatActivity {
         surpriseCounter = (TextView) findViewById(R.id.surpriseCounter);
         fearCounter = (TextView) findViewById(R.id.fearCounter);
 
+        // Iterate through the HashMap, checking each emotion and its value
+        // Update the TextView to the specific emotion's counter value.
         for (String key: emotionCounter.keySet()) {
             if (key.equals("joy")) {
                 joyCounter.setText(emotionCounter.get(key).toString());
