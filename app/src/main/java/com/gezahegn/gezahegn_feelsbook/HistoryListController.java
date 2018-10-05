@@ -21,7 +21,11 @@ public class HistoryListController {
     public void addEmotion(Emotions emotion) {
         getHistoryList().addEmotion(emotion);
         // for testing: Log.d("PRINT THE LIST OUT:", " " + getHistoryList().getHistory());
+    }
 
+    public void deleteEmotion(Integer index) {
+        getHistoryList().deleteEmotion(index);
+//        getHistoryList().deleteEmotion(emotion);
 
     }
 

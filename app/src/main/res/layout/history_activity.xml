@@ -20,7 +20,7 @@
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/saveEditButton"
-        app:layout_constraintEnd_toStartOf="@+id/saveDeleteButton2"
+        app:layout_constraintEnd_toStartOf="@+id/saveDeleteButton"
         app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emotionDropDown" />
@@ -35,12 +35,12 @@
         android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="@string/list_item"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textAlignment="center"
         android:textSize="12sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/deleteInput"
         app:layout_constraintEnd_toStartOf="@+id/deleteInput"
-        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -60,7 +60,7 @@
         app:fontFamily="@font/didact_gothic1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.579"
+        app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintStart_toEndOf="@+id/editTitle"
         app:layout_constraintTop_toBottomOf="@+id/_historyListView"
         app:layout_constraintVertical_bias="0.0" />
@@ -108,7 +108,7 @@
         android:textStyle="bold"
         app:fontFamily="@font/didact_gothic1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintHorizontal_bias="0.188"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/_historyListView" />
 
@@ -124,7 +124,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/list_item"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -149,7 +149,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editComment" />
 
     <Button
-        android:id="@+id/saveDeleteButton2"
+        android:id="@+id/saveDeleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -169,15 +169,14 @@
     <Spinner
         android:id="@+id/emotionDropDown"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:entries="@android:array/imProtocols"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/saveDeleteButton2"
-        app:layout_constraintEnd_toStartOf="@+id/saveDeleteButton2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/saveDeleteButton"
+        app:layout_constraintEnd_toStartOf="@+id/saveDeleteButton"
         app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
