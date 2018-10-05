@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class HistoryList {
-    protected ArrayList<Emotions> historyList;
+    protected static ArrayList<Emotions> historyList;
 
 //    Constructor
     public HistoryList() {
         historyList = new ArrayList<Emotions>();
     }
 
-    public Collection<Emotions> getHistory() {
+    public ArrayList<Emotions> getHistory() {
         return historyList;
     }
 

@@ -21,8 +21,8 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".ListHistoryActivity" />
-        <activity android:name=".CountActivity"></activity>
+        <activity android:name=".CountActivity" />
+        <activity android:name=".HistoryActivity"></activity>
     </application>
 
 </manifest>

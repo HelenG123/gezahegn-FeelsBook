@@ -23,12 +23,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.gezahegn.gezahegn_feelsbook.HistoryList.historyList;
+
 public class MainActivity extends AppCompatActivity {
+
+    public HistoryList testList;
+
+    // The comment box on the main page
+    public EditText mainComment;
 
     // The history and count button that redirect to two different activities
     public Button historyButton;
@@ -59,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
 
         }};
 
-        /*------------------------THE 6 EMOTIONS SECTION --------------------------*/
+        /*------------------------THE 6 EMOTION BUTTONS SECTION --------------------------*/
 
-        // Initialize all 6 emotions
+        // Initialize all 6 emotion buttons
         joyButton = (ImageButton) findViewById(R.id.joyButton);
         angryButton = (ImageButton) findViewById(R.id.angryButton);
         loveButton = (ImageButton) findViewById(R.id.loveButton);
@@ -69,27 +77,41 @@ public class MainActivity extends AppCompatActivity {
         surpriseButton = (ImageButton) findViewById(R.id.surpriseButton);
         fearButton = (ImageButton) findViewById(R.id.fearButton);
 
+        //Initialize the mainComment
+        mainComment = (EditText) findViewById(R.id.mainComment);
+
         // Resource: https://stackoverflow.com/questions/16473315/multiple-imagebuttons-for-one-purpose-in-a-fragment
         View.OnClickListener emojiPressedListener = new View.OnClickListener() {
+            // When one of the emoji buttons has been clicked
             @Override
             public void onClick(View view) {
-                // ContentDescription is set for each emotion.
-                // For instance, joyButton's ContentDescription is joy.
+
+                // ContentDescription is set for each emotion. For instance, joyButton's ContentDescription is joy.
                 String emotionType = (String)view.getContentDescription();
                 //for testing: Log.d("Status:", emotionType);
 
-                // Update the emotionCounter dictionary/HashMap
-                // Increment for the specific emotion
+                // Update the emotionCounter dictionary/HashMap. Increment for the specific emotion.
                 Integer updatedVal = emotionCounter.get(emotionType) + 1;
                 emotionCounter.put(emotionType, updatedVal);
                 // for testing: Log.d(emotionType, "Value: " + updatedVal);
 
+                // Store whatever text was written in the comment, then clear the comment box.
+                String currComment = mainComment.getText().toString();
+                mainComment.getText().clear();
 
+                // Create an instance of the Emotions class
+                Emotions currEmotion = new Emotions(emotionType, currComment);
+                // for testing:
+                Log.d("TESTING OBJECT", "Instance: " + currEmotion.comment);
 
+//                testList.addEmotion(currEmotion);
+//                addEmotion(currEmotion);
                 }
+
             };
 
-
+        // Set the OnClickListeners for the 6 emotion buttons so that when pressed,
+        // it'll call the method above.
         joyButton.setOnClickListener(emojiPressedListener);
         angryButton.setOnClickListener(emojiPressedListener);
         loveButton.setOnClickListener(emojiPressedListener);
@@ -98,20 +120,19 @@ public class MainActivity extends AppCompatActivity {
         fearButton.setOnClickListener(emojiPressedListener);
 
 
-        /*------------------------HISTORY AND COUNT SECTION------------------------*/
+        /*------------------------HISTORY AND COUNT SECTION-------------------------------*/
 
         // Initialize the HISTORY and COUNT button
         historyButton = (Button)findViewById(R.id.historyButton);
         countButton = (Button)findViewById(R.id.countButton);
 
-        // When the HISTORY button is clicked, redirect to the ListHistoryActivity page
+        // When the HISTORY button is clicked, redirect to the HistoryActivity page
         historyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /* Intent is just like glue which helps to navigate one activity
-                * to another. */
-                Intent intent = new Intent(MainActivity.this, ListHistoryActivity.class);
-                startActivity(intent); // startActivity allow you to move
+                /* Intent is just like glue which helps to navigate one activity to another. */
+                Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+                startActivity(intent); // startActivity allow you to move to the other activity
             }
         });
 
@@ -125,19 +146,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-    public void onClick(ImageButton emotionType) {
-        Log.d("Emotion:", "hello");
-    }
-
-//    public View.OnClickListener emojiPressed() = new View.OnClickListener() {
-//        @Override
-//        public void onClick(View v) {
-//        Emotions currEmotion = new Emotions(emotionType);
-//        Log.d("hello", "emojiPressed:");
-//        // Increment the count for that specific emotion
-//        Integer updatedVal = emotionCounter.get(emotionType) + 1;
-//        emotionCounter.put(emotionType, updatedVal);
-//    }
 
 }
