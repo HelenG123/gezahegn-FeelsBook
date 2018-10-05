@@ -18,7 +18,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package com.gezahegn.gezahegn_feelsbook;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -74,13 +73,29 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener emojiPressedListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String currEmotion = (String)view.getContentDescription();
-                Log.d("Status:", currEmotion);
+                // ContentDescription is set for each emotion.
+                // For instance, joyButton's ContentDescription is joy.
+                String emotionType = (String)view.getContentDescription();
+                //for testing: Log.d("Status:", emotionType);
+
+                // Update the emotionCounter dictionary/HashMap
+                // Increment for the specific emotion
+                Integer updatedVal = emotionCounter.get(emotionType) + 1;
+                emotionCounter.put(emotionType, updatedVal);
+                // for testing: Log.d(emotionType, "Value: " + updatedVal);
+
+
+
                 }
             };
 
 
         joyButton.setOnClickListener(emojiPressedListener);
+        angryButton.setOnClickListener(emojiPressedListener);
+        loveButton.setOnClickListener(emojiPressedListener);
+        sadButton.setOnClickListener(emojiPressedListener);
+        surpriseButton.setOnClickListener(emojiPressedListener);
+        fearButton.setOnClickListener(emojiPressedListener);
 
 
         /*------------------------HISTORY AND COUNT SECTION------------------------*/
@@ -89,13 +104,13 @@ public class MainActivity extends AppCompatActivity {
         historyButton = (Button)findViewById(R.id.historyButton);
         countButton = (Button)findViewById(R.id.countButton);
 
-        // When the HISTORY button is clicked, redirect to the listHistoryActivity page
+        // When the HISTORY button is clicked, redirect to the ListHistoryActivity page
         historyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /* Intent is just like glue which helps to navigate one activity
                 * to another. */
-                Intent intent = new Intent(MainActivity.this, listHistoryActivity.class);
+                Intent intent = new Intent(MainActivity.this, ListHistoryActivity.class);
                 startActivity(intent); // startActivity allow you to move
             }
         });

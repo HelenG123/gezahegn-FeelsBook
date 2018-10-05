@@ -6,4 +6,164 @@
     android:layout_height="match_parent"
     tools:context=".CountActivity">
 
+    <TextView
+        android:id="@+id/fearCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/fearImageView"
+        app:layout_constraintTop_toBottomOf="@+id/sadCounter" />
+
+    <ImageView
+        android:id="@+id/fearImageView"
+        android:layout_width="108dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sadImageView"
+        app:srcCompat="@drawable/fear"
+        tools:layout_editor_absoluteX="201dp" />
+
+    <TextView
+        android:id="@+id/sadCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fearCounter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sadImageView"
+        app:layout_constraintTop_toBottomOf="@+id/angerCounter" />
+
+    <ImageView
+        android:id="@+id/sadImageView"
+        android:layout_width="108dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toTopOf="@+id/fearImageView"
+        app:layout_constraintTop_toBottomOf="@+id/angerImageView"
+        app:srcCompat="@drawable/sadness"
+        tools:layout_editor_absoluteX="201dp" />
+
+    <TextView
+        android:id="@+id/angerCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:text="0"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/sadCounter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/angerImageView"
+        app:layout_constraintTop_toBottomOf="@+id/countActivityTitle" />
+
+    <ImageView
+        android:id="@+id/angerImageView"
+        android:layout_width="108dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toTopOf="@+id/sadImageView"
+        app:layout_constraintTop_toBottomOf="@+id/countActivityTitle"
+        app:srcCompat="@drawable/anger"
+        tools:layout_editor_absoluteX="201dp" />
+
+    <TextView
+        android:id="@+id/surpriseCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loveCounter"
+        tools:layout_editor_absoluteX="146dp" />
+
+    <ImageView
+        android:id="@+id/surpriseImageView"
+        android:layout_width="108dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loveImageView"
+        app:srcCompat="@drawable/surprise"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/loveCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/surpriseCounter"
+        app:layout_constraintTop_toBottomOf="@+id/joyCounter"
+        tools:layout_editor_absoluteX="146dp" />
+
+    <ImageView
+        android:id="@+id/loveImageView"
+        android:layout_width="108dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toTopOf="@+id/surpriseImageView"
+        app:layout_constraintTop_toBottomOf="@+id/joyImageView"
+        app:srcCompat="@drawable/love"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <ImageView
+        android:id="@+id/joyImageView"
+        android:layout_width="108dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toTopOf="@+id/loveImageView"
+        app:layout_constraintEnd_toStartOf="@+id/joyCounter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countActivityTitle"
+        app:srcCompat="@drawable/joy" />
+
+    <TextView
+        android:id="@+id/countActivityTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="106dp"
+        android:text="@string/count"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="70sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/didact_gothic1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/joyCounter"
+        android:layout_width="27dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/loveCounter"
+        app:layout_constraintEnd_toStartOf="@+id/angerImageView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/joyImageView"
+        app:layout_constraintTop_toBottomOf="@+id/countActivityTitle" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/under_count_title"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:fontFamily="@font/didact_gothic1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/countActivityTitle"
+        app:layout_constraintVertical_bias="0.148" />
+
 </android.support.constraint.ConstraintLayout>

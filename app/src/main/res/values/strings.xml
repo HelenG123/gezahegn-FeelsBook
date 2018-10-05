@@ -18,4 +18,7 @@
     <string name="list_item">Item Number</string>
     <string name="edit_save">Save Edit</string>
     <string name="delete_save">Save Delete</string>
+
+    <!--On the Count page-->
+    <string name="under_count_title">check your current scores</string>
 </resources>
