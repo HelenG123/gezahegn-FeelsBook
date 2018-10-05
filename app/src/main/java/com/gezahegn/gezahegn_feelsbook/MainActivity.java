@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     public ImageButton sadButton;
     public ImageButton surpriseButton;
     public ImageButton fearButton;
-    public Map<String, Integer> emotionCounter;
+    public static Map<String, Integer> emotionCounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +82,8 @@ public class MainActivity extends AppCompatActivity {
                 // Increment for the specific emotion
                 Integer updatedVal = emotionCounter.get(emotionType) + 1;
                 emotionCounter.put(emotionType, updatedVal);
-                // for testing: Log.d(emotionType, "Value: " + updatedVal);
+                // for testing:
+                Log.d(emotionType, "Value: " + updatedVal);
 
 
 

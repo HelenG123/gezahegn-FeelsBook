@@ -24,9 +24,11 @@
         android:layout_width="108dp"
         android:layout_height="106dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fearCounter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/surpriseCounter"
         app:layout_constraintTop_toBottomOf="@+id/sadImageView"
-        app:srcCompat="@drawable/fear"
-        tools:layout_editor_absoluteX="201dp" />
+        app:srcCompat="@drawable/fear" />
 
     <TextView
         android:id="@+id/sadCounter"
@@ -46,9 +48,11 @@
         android:layout_width="108dp"
         android:layout_height="106dp"
         app:layout_constraintBottom_toTopOf="@+id/fearImageView"
+        app:layout_constraintEnd_toStartOf="@+id/sadCounter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/loveCounter"
         app:layout_constraintTop_toBottomOf="@+id/angerImageView"
-        app:srcCompat="@drawable/sadness"
-        tools:layout_editor_absoluteX="201dp" />
+        app:srcCompat="@drawable/sadness" />
 
     <TextView
         android:id="@+id/angerCounter"
@@ -59,6 +63,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/sadCounter"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/angerImageView"
         app:layout_constraintTop_toBottomOf="@+id/countActivityTitle" />
 
@@ -67,9 +72,11 @@
         android:layout_width="108dp"
         android:layout_height="106dp"
         app:layout_constraintBottom_toTopOf="@+id/sadImageView"
+        app:layout_constraintEnd_toStartOf="@+id/angerCounter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/joyCounter"
         app:layout_constraintTop_toBottomOf="@+id/countActivityTitle"
-        app:srcCompat="@drawable/anger"
-        tools:layout_editor_absoluteX="201dp" />
+        app:srcCompat="@drawable/anger" />
 
     <TextView
         android:id="@+id/surpriseCounter"
@@ -79,17 +86,21 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loveCounter"
-        tools:layout_editor_absoluteX="146dp" />
+        app:layout_constraintEnd_toStartOf="@+id/fearImageView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/surpriseImageView"
+        app:layout_constraintTop_toBottomOf="@+id/loveCounter" />
 
     <ImageView
         android:id="@+id/surpriseImageView"
         android:layout_width="108dp"
         android:layout_height="106dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/surpriseCounter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loveImageView"
-        app:srcCompat="@drawable/surprise"
-        tools:layout_editor_absoluteX="16dp" />
+        app:srcCompat="@drawable/surprise" />
 
     <TextView
         android:id="@+id/loveCounter"
@@ -99,17 +110,21 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/surpriseCounter"
-        app:layout_constraintTop_toBottomOf="@+id/joyCounter"
-        tools:layout_editor_absoluteX="146dp" />
+        app:layout_constraintEnd_toStartOf="@+id/sadImageView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/loveImageView"
+        app:layout_constraintTop_toBottomOf="@+id/joyCounter" />
 
     <ImageView
         android:id="@+id/loveImageView"
         android:layout_width="108dp"
         android:layout_height="106dp"
         app:layout_constraintBottom_toTopOf="@+id/surpriseImageView"
+        app:layout_constraintEnd_toStartOf="@+id/loveCounter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/joyImageView"
-        app:srcCompat="@drawable/love"
-        tools:layout_editor_absoluteX="16dp" />
+        app:srcCompat="@drawable/love" />
 
     <ImageView
         android:id="@+id/joyImageView"
@@ -153,7 +168,7 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:layout_width="267dp"
         android:layout_height="wrap_content"
         android:text="@string/under_count_title"
         android:textSize="24sp"
