@@ -34,7 +34,7 @@ public class HistoryActivity extends MainActivity {
     public ListView historyListView;
 //    public HistoryList hist;
     public Collection<Emotions> historyCollection;
-    public static ArrayList<String> formattedArray = new ArrayList<String>();
+    public ArrayList<String> formattedArray = new ArrayList<String>();
     public List<String> myArraySpinner = new ArrayList<String>();
 
     public Button saveEditButton;
@@ -56,6 +56,8 @@ public class HistoryActivity extends MainActivity {
 
         editInput = (EditText) findViewById(R.id.editInput);
         deleteInput = (EditText) findViewById(R.id.deleteInput);
+
+        historyListView.setAdapter(null);
 
         // Add the 6 emotions to the dropdown Spinner menu
         for (String emotion : emotionCounter.keySet()) {
@@ -81,6 +83,7 @@ public class HistoryActivity extends MainActivity {
                     "\nComment: " + emotion.getComment();
             formattedArray.add(currEmotion);
         }
+        historyListView.setAdapter(null);
 
         // This is the array adapter, it takes the context of the activity as a
         // first parameter, the type of list view as a second parameter and your
@@ -111,26 +114,21 @@ public class HistoryActivity extends MainActivity {
 
                             // Call delete and pass in index in the HistoryList
                             historyListController.deleteEmotion(num);
-                            arrayAdapter.clear();
-                            refresh();
+//                            arrayAdapter.clear();
+                            update();
                         } catch (NumberFormatException e) {
                             Log.d("Error Message: ", "Not valid input.");
                         }
 
                 }
-
+                arrayAdapter.clear();
             }
         };
-
         saveEditButton.setOnClickListener(saveButtonPressed);
         saveDeleteButton.setOnClickListener(saveButtonPressed);
     }
 
     public void update() {
-
-    }
-
-    public void refresh() {
         Intent intent = getIntent();
         overridePendingTransition(0, 0);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
