@@ -13,3 +13,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+#Resources
+Mostly, I followed Dr. Hindle's video: 
+* Abram Hindle, CMPUT 301 Virtual Lecture: Intro to UML Sequence Diagrams, https://www.youtube.com/watch?v=Ek7WxAmxmmw , 2012-09-20, retrieved 2018-10-02
