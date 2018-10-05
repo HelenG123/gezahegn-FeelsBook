@@ -17,14 +17,112 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package com.gezahegn.gezahegn_feelsbook;
 
+import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
+
+    // The history and count button that redirect to two different activities
+    public Button historyButton;
+    public Button countButton;
+
+    // The 6 emotions/emoji buttons
+    public ImageButton joyButton;
+    public ImageButton angryButton;
+    public ImageButton loveButton;
+    public ImageButton sadButton;
+    public ImageButton surpriseButton;
+    public ImageButton fearButton;
+    public Map<String, Integer> emotionCounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Initialize the counter. It's a dictionary/HashMap that will keep track of all the emotions
+        emotionCounter = new HashMap<String, Integer>() {{
+            put("joy", 0);
+            put("angry", 0);
+            put("love", 0);
+            put("sad", 0);
+            put("surprise", 0);
+            put("fear", 0);
+
+        }};
+
+        /*------------------------THE 6 EMOTIONS SECTION --------------------------*/
+
+        // Initialize all 6 emotions
+        joyButton = (ImageButton) findViewById(R.id.joyButton);
+        angryButton = (ImageButton) findViewById(R.id.angryButton);
+        loveButton = (ImageButton) findViewById(R.id.loveButton);
+        sadButton = (ImageButton) findViewById(R.id.sadButton);
+        surpriseButton = (ImageButton) findViewById(R.id.surpriseButton);
+        fearButton = (ImageButton) findViewById(R.id.fearButton);
+
+        // Resource: https://stackoverflow.com/questions/16473315/multiple-imagebuttons-for-one-purpose-in-a-fragment
+        View.OnClickListener emojiPressedListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String currEmotion = (String)view.getContentDescription();
+                Log.d("Status:", currEmotion);
+                }
+            };
+
+
+        joyButton.setOnClickListener(emojiPressedListener);
+
+
+        /*------------------------HISTORY AND COUNT SECTION------------------------*/
+
+        // Initialize the HISTORY and COUNT button
+        historyButton = (Button)findViewById(R.id.historyButton);
+        countButton = (Button)findViewById(R.id.countButton);
+
+        // When the HISTORY button is clicked, redirect to the listHistoryActivity page
+        historyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /* Intent is just like glue which helps to navigate one activity
+                * to another. */
+                Intent intent = new Intent(MainActivity.this, listHistoryActivity.class);
+                startActivity(intent); // startActivity allow you to move
+            }
+        });
+
+        // When the COUNT button is pressed, redirect to the CountActivity
+        countButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CountActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+    public void onClick(ImageButton emotionType) {
+        Log.d("Emotion:", "hello");
+    }
+
+//    public View.OnClickListener emojiPressed() = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//        Emotions currEmotion = new Emotions(emotionType);
+//        Log.d("hello", "emojiPressed:");
+//        // Increment the count for that specific emotion
+//        Integer updatedVal = emotionCounter.get(emotionType) + 1;
+//        emotionCounter.put(emotionType, updatedVal);
+//    }
+
 }
