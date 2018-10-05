@@ -143,12 +143,12 @@
         android:layout_height="106dp"
         android:text="@string/count"
         android:textColor="@android:color/holo_red_light"
-        android:textSize="70sp"
+        android:textSize="75sp"
         android:textStyle="bold"
         app:fontFamily="@font/didact_gothic1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -169,9 +169,10 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="267dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/under_count_title"
+        android:textColor="@color/darkGrey"
         android:textSize="24sp"
         android:textStyle="bold|italic"
         app:fontFamily="@font/didact_gothic1"
@@ -180,6 +181,6 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/countActivityTitle"
-        app:layout_constraintVertical_bias="0.161" />
+        app:layout_constraintVertical_bias="0.156" />
 
 </android.support.constraint.ConstraintLayout>
