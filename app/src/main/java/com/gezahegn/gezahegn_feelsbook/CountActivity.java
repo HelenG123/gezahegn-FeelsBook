@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.Iterator;
+
 import static com.gezahegn.gezahegn_feelsbook.MainActivity.emotionCounter;
 
 public class CountActivity extends AppCompatActivity {
@@ -28,6 +30,28 @@ public class CountActivity extends AppCompatActivity {
         sadCounter = (TextView) findViewById(R.id.sadCounter);
         surpriseCounter = (TextView) findViewById(R.id.surpriseCounter);
         fearCounter = (TextView) findViewById(R.id.fearCounter);
+
+        for (String key: emotionCounter.keySet()) {
+            if (key.equals("joy")) {
+                joyCounter.setText(emotionCounter.get(key).toString());
+            }
+            else if (key.equals("angry")) {
+                angerCounter.setText(emotionCounter.get(key).toString());
+            }
+            else if (key.equals("love")) {
+                loveCounter.setText(emotionCounter.get(key).toString());
+            }
+            else if (key.equals("sad")) {
+                sadCounter.setText(emotionCounter.get(key).toString());
+            }
+            else if (key.equals("surprise")) {
+                surpriseCounter.setText(emotionCounter.get(key).toString());
+            }
+            else {
+                fearCounter.setText(emotionCounter.get(key).toString());
+            }
+        }
+
 
     }
 }

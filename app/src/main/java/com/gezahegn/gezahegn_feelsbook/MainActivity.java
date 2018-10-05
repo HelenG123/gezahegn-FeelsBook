@@ -82,8 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 // Increment for the specific emotion
                 Integer updatedVal = emotionCounter.get(emotionType) + 1;
                 emotionCounter.put(emotionType, updatedVal);
-                // for testing:
-                Log.d(emotionType, "Value: " + updatedVal);
+                // for testing: Log.d(emotionType, "Value: " + updatedVal);
 
 
 

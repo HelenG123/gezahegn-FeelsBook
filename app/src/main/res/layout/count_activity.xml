@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/fearCounter"
-        android:layout_width="wrap_content"
+        android:layout_width="35dp"
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="30sp"
@@ -32,7 +32,7 @@
 
     <TextView
         android:id="@+id/sadCounter"
-        android:layout_width="wrap_content"
+        android:layout_width="35dp"
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="30sp"
@@ -56,7 +56,7 @@
 
     <TextView
         android:id="@+id/angerCounter"
-        android:layout_width="wrap_content"
+        android:layout_width="35dp"
         android:layout_height="41dp"
         android:text="0"
         android:textSize="30sp"
@@ -104,7 +104,7 @@
 
     <TextView
         android:id="@+id/loveCounter"
-        android:layout_width="wrap_content"
+        android:layout_width="35dp"
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="30sp"
@@ -148,15 +148,16 @@
         app:fontFamily="@font/didact_gothic1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/joyCounter"
-        android:layout_width="27dp"
+        android:layout_width="35dp"
         android:layout_height="wrap_content"
+        android:numeric="integer"
         android:text="0"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -179,6 +180,6 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/countActivityTitle"
-        app:layout_constraintVertical_bias="0.148" />
+        app:layout_constraintVertical_bias="0.161" />
 
 </android.support.constraint.ConstraintLayout>
