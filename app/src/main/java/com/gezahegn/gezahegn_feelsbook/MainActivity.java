@@ -26,7 +26,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import static com.gezahegn.gezahegn_feelsbook.HistoryList.historyList;
@@ -35,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     public HistoryList testList;
 
-    // The comment box on the main page
+    // The comment and date attribute for each instance of the Emotion class
     public EditText mainComment;
 
     // The history and count button that redirect to two different activities
@@ -55,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        DateFormat dateFormat = new SimpleDateFormat("\"yyyy-MM-dd'T'HH:mm:ss'Z'\", Locale.US");
+
 
         // Initialize the counter. It's a dictionary/HashMap that will keep track of all the emotions
         emotionCounter = new HashMap<String, Integer>() {{
@@ -99,10 +106,15 @@ public class MainActivity extends AppCompatActivity {
                 String currComment = mainComment.getText().toString();
                 mainComment.getText().clear();
 
+                // Store the timestamp in the ISO-8601 format
+                // Resource: https://stackoverflow.com/questions/13515168/android-time-in-iso-8601
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.CANADA);
+                String currTime = sdf.format(new Date());
+                // for testing: Log.d("Current Time", " " + currTime);
+
                 // Create an instance of the Emotions class
-                Emotions currEmotion = new Emotions(emotionType, currComment);
-                // for testing:
-                Log.d("TESTING OBJECT", "Instance: " + currEmotion.comment);
+                Emotions currEmotion = new Emotions(emotionType, currComment, currTime);
+                // for testing: Log.d("TESTING OBJECT", "Instance: " + currEmotion.comment);
 
 //                testList.addEmotion(currEmotion);
 //                addEmotion(currEmotion);
