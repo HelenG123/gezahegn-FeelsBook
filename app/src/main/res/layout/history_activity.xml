@@ -179,4 +179,20 @@
         app:layout_constraintEnd_toStartOf="@+id/saveDeleteButton"
         app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Change Time"
+        android:inputType="time"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/emotionDropDown"
+        app:layout_constraintEnd_toStartOf="@+id/saveDeleteButton"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editInput"
+        app:layout_constraintVertical_bias="0.2" />
 </android.support.constraint.ConstraintLayout>

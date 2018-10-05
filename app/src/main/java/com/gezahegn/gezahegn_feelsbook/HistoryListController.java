@@ -15,18 +15,23 @@ public class HistoryListController {
         return historyList2;
     }
 
-//    public Emotions add2HistoryList() throws EmptyHistoryListException {
-//        return getHistoryList().chooseEmotion();
-//    }
     public void addEmotion(Emotions emotion) {
         getHistoryList().addEmotion(emotion);
         // for testing: Log.d("PRINT THE LIST OUT:", " " + getHistoryList().getHistory());
     }
 
     public void deleteEmotion(Integer index) {
-        getHistoryList().deleteEmotion(index);
-//        getHistoryList().deleteEmotion(emotion);
+        Integer currSize = getSize();
+        if (index > currSize) {
+            Log.d("Error Message:", "Out of range");
+        }
+        else {
+            getHistoryList().deleteEmotion(index);
+        }
+    }
 
+    public Integer getSize() {
+        return getHistoryList().getSize();
     }
 
 }

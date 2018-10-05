@@ -114,14 +114,14 @@ public class HistoryActivity extends MainActivity {
 
                             // Call delete and pass in index in the HistoryList
                             historyListController.deleteEmotion(num);
-//                            arrayAdapter.clear();
+                            arrayAdapter.clear();
                             update();
                         } catch (NumberFormatException e) {
                             Log.d("Error Message: ", "Not valid input.");
                         }
 
                 }
-                arrayAdapter.clear();
+
             }
         };
         saveEditButton.setOnClickListener(saveButtonPressed);

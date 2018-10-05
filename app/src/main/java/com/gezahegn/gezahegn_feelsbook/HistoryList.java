@@ -33,6 +33,10 @@ public class HistoryList implements Serializable {
         return emotion;
     }
 
+    public Integer getSize() {
+      return historyList.size();
+    };
+
 
 
 }
