@@ -25,6 +25,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -34,14 +35,16 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+//import static com.gezahegn.gezahegn_feelsbook.HistoryListController.historyList2;
+
 
 public class MainActivity extends AppCompatActivity {
 
-//    public HistoryList testList;
-    public ArrayList<Emotions> historyList;
+    public static HistoryListController historyListController = new HistoryListController();
 
     // The comment and date attribute for each instance of the Emotion class
     public EditText mainComment;
+//    public static HistoryList historyList3;
 
     // The history and count button that redirect to two different activities
     public Button historyButton;
@@ -87,7 +90,10 @@ public class MainActivity extends AppCompatActivity {
         //Initialize the mainComment
         mainComment = (EditText) findViewById(R.id.mainComment);
 
-        final HistoryList testList = new HistoryList();
+        // Initialize an instance of the HistoryList class
+        final HistoryList historyList1 = new HistoryList();
+
+
 
         // Resource: https://stackoverflow.com/questions/16473315/multiple-imagebuttons-for-one-purpose-in-a-fragment
         View.OnClickListener emojiPressedListener = new View.OnClickListener() {
@@ -118,10 +124,14 @@ public class MainActivity extends AppCompatActivity {
                 Emotions currEmotion = new Emotions(emotionType, currComment, currTime);
                 // for testing: Log.d("TESTING OBJECT", "Instance: " + currEmotion.comment);
 
-                testList.addEmotion(currEmotion);
+                historyListController.addEmotion(currEmotion);
+//                historyList2.addEmotion(currEmotion);
+//                historyList1.addEmotion(currEmotion);
                 // for testing:
-                Log.d("TESTING OBJECT", "Instance: " + testList.getHistory());
+//                Log.d("TESTING OBJECT", "Instance: " + historyList1.getHistory());
                 }
+
+//                HistoryList historyList3 =
 
             };
 
@@ -146,7 +156,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 /* Intent is just like glue which helps to navigate one activity to another. */
+
+
                 Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+//                intent.putExtra("array_list", historyList1);
+//                Bundle bundle = new Bundle();
+//                bundle.putSerializable("array_list", historyList1);
+//                intent.putExtras(bundle);
                 startActivity(intent); // startActivity allow you to move to the other activity
             }
         });
@@ -160,6 +176,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
+
+//    public void add2HistoryList(View v) {
+//        Toast.makeText(this, "Choose an Emotion", Toast.LENGTH_SHORT).show();
+////        HistoryListController hl = new HistoryListController();
+//        try {
+//            Emotions e = hl.chooseEmotion();
+//        } catch (EmptyHistoryListException e) {
+//            Toast.makeText(this, "The history list is empty.", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
 }

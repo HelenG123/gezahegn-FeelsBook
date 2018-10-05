@@ -15,4 +15,21 @@ public class Emotions {
 //        When generated, initially had return emotionType without the 'this'
         return this.emotionType;
     }
+
+    public String getComment() {
+        return this.comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public String getTimestamp() {
+        return this.timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
 }

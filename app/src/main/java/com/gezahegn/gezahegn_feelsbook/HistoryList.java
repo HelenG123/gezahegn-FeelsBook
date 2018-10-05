@@ -1,9 +1,10 @@
 package com.gezahegn.gezahegn_feelsbook;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class HistoryList {
+public class HistoryList implements Serializable {
     protected ArrayList<Emotions> historyList = null;
 
 //    Constructor
@@ -24,7 +25,10 @@ public class HistoryList {
     }
 
     public Emotions editEmotion(Emotions emotion) {
+
         return emotion;
     }
+
+
 
 }
